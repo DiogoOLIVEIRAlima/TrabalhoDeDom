@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX4DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Atividade Prática Individual</h1>
+    <h2>1 Ordenação</h2>
+    <p>
+      Crie um script que preencha a tabela com valores. Depois crie outro script
+      que ordene os valores da tabela
+    </p>
+    <table id="t1">
+      <th>Valores</th>
+      <tr>
+        <td>00,00</td>
+      </tr>
+      <tr>
+        <td>00,00</td>
+      </tr>
+      <tr>
+        <td>00,00</td>
+      </tr>
+    </table>
+    <!-----------------Resposta do Exercício 1------------>
+
+<script>
+  let random1 = Math.random() * 10 
+  let random2 = Math.random() * 10
+  let random3 = Math.random()  * 10
+    let valor1 = document.getElementById('t1').getElementsByTagName("td")[0].innerHTML = random1
+    let valor2 = document.getElementById('t1').getElementsByTagName("td")[1].innerHTML =  random2
+    let valor3 = document.getElementById('t1').getElementsByTagName("td")[2].innerHTML =  random3
+</script>   
+<script>
+    if(random1 <= random2 && random1 <= random3){
+        valor1.innerHTML = random1
+        if(random2 <= random3 ){
+        valor2.innerHTML = random2
+        valor3.innerHTML = random3
+        }
+        else{
+          valor2.innerHTML = random3
+          valor3.innerHTML = random2
+        }
+    }
+    else if(random2 <= random1 && random2 <= random3) {
+        valor1.innerText =random2
+        if(random1 <= random3){
+          valor2.innerHTML = random1
+          valor3.innerHTML = random3
+        } 
+        else{
+          valor2.innerHTML = random3
+          valor2.innerHTML = random1
+        }
+      } 
+      else if(random3 <= random1 && random3 <= random2){
+        valor1.innerHTML = random3
+        if(random1 <= random2){
+          valor2.innerHTML = random1
+          valor3.innerHTML = random2
+        }
+        else{
+          valor2.innerHTML = random2
+          valor2.innerHTML = random1
+        }
+      }
+      
+    
+    
+    
+</script>    
+    <!---------------------------------------------------->
+    <h2>2 Cores</h2>
+    <p>
+      Crie um script que gere uma cor aleatória em rgb e a apresente em um li
+      dentro da lista abaixo, deve-se, também, criar um gradiente linear de
+      branco até esta cor como cor de fundo do li.
+    </p>
+    <ul id="lista-cores" style="list-style: none; padding: 0"></ul>
+
+    <!-----------------Resposta do Exercício 2------------>
+
+    <script>
+     let aleatória1 = round(Math.random() * 255)
+     let aleatória2 = round( Math.random() * 255)
+     let aleatória3 = round(math.random() * 255)
+
+document.getElementById("lista-cores").innerHTML = ` <ul id="lista-cores" style="list-style: none; padding: 0"> <li style = "background-color: rgb(${aleatória1}, ${aletória2}, ${aleatória3})">"AAAA"</li></ul>`
+
+     
+    </script>
+    <!---------------------------------------------------->
+
+    <h2>3 Países</h2>
+    <p>
+      Crie um script que encontre o país com o maior nome e o apresente em uma
+      div azul abaixo da tabela, e risque o pais com o menor nome, colocando sua
+      letra em vermelha
+    </p>
+    <table id="t2">
+      <th>País</th>
+      <tr>
+        <td>Brasil</td>
+      </tr>
+      <tr>
+        <td>Honduras</td>
+      </tr>
+      <tr>
+        <td>Peru</td>
+      </tr>
+      <tr>
+        <td>Alemanha</td>
+      </tr>
+      <tr>
+        <td>China</td>
+      </tr>
+      <tr>
+        <td>Rússia</td>
+      </tr>
+      <tr>
+        <td>Itália</td>
+      </tr>
+      <tr>
+        <td>Indonésia</td>
+      </tr>
+      <tr>
+        <td>Espanha</td>
+      </tr>
+      <tr>
+        <td>Cazaquistão</td>
+      </tr>
+      <tr>
+        <td>Chile</td>
+      </tr>
+      <tr>
+        <td>Argentina</td>
+      </tr>
+      <tr>
+        <td>Croácia</td>
+      </tr>
+      <tr>
+        <td>Portugal</td>
+      </tr>
+      <tr>
+        <td>Venezuela</td>
+      </tr>
+      <tr>
+        <td>Costa do Marfim</td>
+      </tr>
+      <tr>
+        <td>Congo</td>
+      </tr>
+      <tr>
+        <td>México</td>
+      </tr>
+    </table>
+    <div id="paisMaior"></div>
+
+    <!-----------------Resposta do Exercício 3------------>
+
+<script>
+ let Brasil =  document.getElementById('t2').getElementsByTagName('td')[0]
+ let Honduras = document.getElementById('t2').getElementsByTagName('td')[1]
+ let Peru = document.getElementById('t2').getElementsByTagName('td')[2]
+ let Alemanha = document.getElementById('t2').getElementsByTagName('td')[3]
+ 
+
+</script>
+    <!---------------------------------------------------->
+
+    <h2>4 Autopreenchimento</h2>
+    <p>
+      Crie um script que escolha aleatóriamente um nome presente na lista de
+      nomes abaixo e preencha o campo de email com um email composto por
+      'nome@gmail.com'. Além disso, deve-se criar uma senha contendo as inicias
+      de todos os nomes da lista, a começar do último ao primeiro
+    </p>
+    <p>Lista de Nomes</p>
+    <ul id="lista-nomes">
+      <li>Vanessa</li>
+      <li>Luan</li>
+      <li>Carlos</li>
+      <li>Adalberto</li>
+      <li>Jefferson</li>
+      <li>Giovanna</li>
+      <li>Renata</li>
+      <li>Kleber</li>
+      <li>Tatiane</li>
+      <li>Ronaldo</li>
+      <li>Hugo</li>
+      <li>Nilson</li>
+      <li>Santos</li>
+      <li>Marcia</li>
+      <li>Leticia</li>
+      <li>Paula</li>
+      <li>Katarina</li>
+      <li>Artur</li>
+      <li>Henrique</li>
+      <li>Lilian</li>
+    </ul>
+    <form action="#" id="form-preenchimento">
+      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Senha" />
+    </form>
+
+    <!-----------------Resposta do Exercício 4------------>
+  
+    
+
+    <!---------------------------------------------------->
+  </body>
+</html>
